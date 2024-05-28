@@ -1,24 +1,34 @@
 class Solution(object):
-    def removeElement(self, nums, val):
+    def removeDuplicates(self, nums):
         """
         :type nums: List[int]
-        :type val: int
         :rtype: int
         """
-        final_list=[]
+        dup_num={}
+        finallist=[]
+        for i in nums:
+            if i not in dup_num.keys():
+                finallist.append(i)
+                dup_num[i]=1
+
+
+            else:
+                pass
+
+        return len(finallist)
+
+
         
-       
-        for i in range(len(nums)):
-          
-            if nums[i]!=val:
-                
-                final_list.append(nums[i])
-            
-            
-
-        return len(final_list)
-
 
 
 obj=Solution()
-print(obj.removeElement([12,42,65,12,2,3,2,2],2))
+expected_list=[12,42,65,2,3]
+xyz=False
+nums=[12,42,65,12,2,3,2,2]
+k=obj.removeDuplicates([12,42,65,12,2,3,2,2])
+assert k == len(expected_list)
+for i in range(len(expected_list)):
+    nums[i] == expected_list[i]
+    xyz=True
+
+print(xyz)

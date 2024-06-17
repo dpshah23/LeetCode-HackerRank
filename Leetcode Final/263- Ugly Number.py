@@ -8,3 +8,4 @@ class Solution(object):
                 n/=i
 
         return n==1
+        print()
